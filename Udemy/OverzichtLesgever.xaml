@@ -1,0 +1,68 @@
+﻿<Window x:Class="Udemy.OverzichtLesgever"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Udemy"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"     
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Overzicht Lesgever" Height="550" Width="1100" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="125"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblNaamLesgever" Content="Naam Lesgever" HorizontalAlignment="Left" Height="32" Grid.Row="0" FontSize="20" Grid.ColumnSpan="2" Grid.Column="0" Margin="10,9.8,0,0" VerticalAlignment="Top" Width="227"/>
+        <Label x:Name="lblAangemaakteCursussen" Content="Overzicht aangemaakte cursussen: " HorizontalAlignment="Left" Height="36" FontSize="17" Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Margin="10,9.6,0,0" VerticalAlignment="Top" Width="281"/>
+        <DataGrid x:Name="datagridAangemaakteCursussen" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="300" Grid.Row="2" Grid.Column="0" Margin="10,9.8,0,0" 
+                  VerticalAlignment="Top" Width="auto" IsReadOnly="True" Grid.ColumnSpan="4" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Naam}" Header="Cursus" Width="200" >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Categorie.Naam }" Header="Categorie" Width="100">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Niveau.Naam}" Header="Niveau" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Taal.Naam}" Header="Taal" Width="auto"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Beschrijving}" Header="Beschrijving" Width="450">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Prijs}" Header="Prijs" Width="auto"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtCursus" HorizontalAlignment="Left" Height="25" Grid.Row="1"  Grid.Column="2" Margin="10,9.8,0,0" FontSize="15" TextWrapping="Wrap"  VerticalAlignment="Top" Width="202" materialDesign:HintAssist.Hint="Zoeken op cursusnaam: " materialDesign:TextFieldAssist.HasClearButton="True" />
+        <Button x:Name="btnZoekCursus" Content="Zoeken" HorizontalAlignment="Left" Height="25" Grid.Row="1"  Grid.Column="3" Margin="10,9.4,-2.4,0" VerticalAlignment="Top" Width="100" Background="#3171b7"  materialDesign:ButtonAssist.CornerRadius="10" BorderBrush="#3171b7" Click="btnZoekCursus_Click"/>
+        <Button x:Name="btnCursusToevoegen" Content="Cursus Toevoegen" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="0" Margin="20,9.8,0,0" VerticalAlignment="Top" Width="170" Background="#3171b7"  materialDesign:ButtonAssist.CornerRadius="10" BorderBrush="#3171b7" Click="btnCursusToevoegen_Click" />
+        <Button x:Name="btnCursusAanpassen" Content="Cursus Aanpassen" HorizontalAlignment="Left" Grid.Row="3"  Grid.Column="1" Margin="30,9.8,0,0" VerticalAlignment="Top" Width="170" Background="#3171b7"  materialDesign:ButtonAssist.CornerRadius="10" BorderBrush="#3171b7" Click="BtnCursusAanpassen_Click" />
+        <Button x:Name="btnContactgegevensAanpassen" Content="Contactgegevens aanpassen" HorizontalAlignment="Left" Grid.Row="3" Grid.ColumnSpan="2" Grid.Column="2" Margin="100,9.8,0,0" VerticalAlignment="Top" Width="220" Background="#3171b7"  materialDesign:ButtonAssist.CornerRadius="10" BorderBrush="#3171b7" Click="btnContactgegevensAanpassen_Click" />
+
+    </Grid>
+</Window>

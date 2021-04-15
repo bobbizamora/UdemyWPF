@@ -1,0 +1,95 @@
+﻿<Window x:Class="Udemy.AanpassenContactgegevensLesgever"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Udemy"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"     
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        mc:Ignorable="d"
+        Title="Aanpassen Contactgegevens" Height="550" Width="950" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="120*"/>
+            <ColumnDefinition Width="350*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        
+        <Label Grid.Row="0" Grid.Column="0" Margin="5" Content="Voornaam:" x:Name="lblVoornaam" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="1" Grid.Column="0" Margin="5" Content="Naam:" x:Name="lblNaam" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="2" Grid.Column="0" Margin="5" Content="E-mailadres:" x:Name="lblEmailadres" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="3" Grid.Column="0" Margin="5" Content="Paswoord:" x:Name="lblPaswoord" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="3" Grid.Column="2" Margin="5" Content="Controle Paswoord:" x:Name="lblControlePaswoord" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="4" Grid.Column="0" Margin="5" Content="Straat:" x:Name="lblStraat" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="4" Grid.Column="2" Margin="5" Content="Huisnummer:" x:Name="lblHuisnummer" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="5" Grid.Column="0" Margin="5" Content="Postcode:" x:Name="lblPostcode" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="5" Grid.Column="2" Margin="5" Content="Gemeente:" x:Name="lblGemeente" VerticalContentAlignment="Bottom"/>
+        <Label Grid.Row="6" Grid.Column="0" Margin="5" Content="Land:" x:Name="lblLand" VerticalContentAlignment="Bottom"/>
+        <TextBox x:Name="txtVoornaam" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Bottom" Grid.Row="0" Grid.Column="1" Margin="5"/>
+        <Label x:Name="lblGebruiker" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="0" Grid.Column="4" FontSize="10" Margin="5"/>
+        <TextBox x:Name="txtNaam" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Bottom" Grid.Row="1" Grid.Column="1" Margin="5" />
+        <TextBox x:Name="txtEmailAdres" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Bottom" Grid.Row="2" Grid.Column="1" Margin="5" />
+        <PasswordBox x:Name="pwbPaswoord"                     
+                  VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="1" Margin="5" />
+        <PasswordBox x:Name="pwbControlePaswoord"                    
+                  materialDesign:HintAssist.Hint="Gelieve uw paswoord nogmaals in te voeren"
+                  VerticalAlignment="Bottom" Grid.Row="3" Grid.Column="3" Margin="5" />
+        <TextBox x:Name="txtStraat" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Bottom" Grid.Row="4" Grid.Column="1" Margin="5" />
+        <TextBox x:Name="txtHuisnummer" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Bottom" Grid.Row="4" Grid.Column="3" Margin="5" />
+        <TextBox x:Name="txtPostcode" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Bottom" Grid.Row="5" Grid.Column="1" Margin="5" />
+        <TextBox x:Name="txtGemeente" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Bottom" Grid.Row="5" Grid.Column="3" Margin="5" />
+        <TextBox x:Name="txtLand" 
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Bottom" Grid.Row="6" Grid.Column="1" Margin="5" />
+        <Label Grid.Row="7" Grid.Column="0" Margin="5" Content="Beschrijving:" x:Name="lblBeschrijving" VerticalContentAlignment="Top"/>
+        <TextBox 
+            Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Margin="5" Name="txtBoxBeschrijving"
+            TextWrapping="Wrap"
+            VerticalAlignment="Stretch"
+            MinWidth="280"
+            AcceptsReturn="True"
+            VerticalScrollBarVisibility="Auto"
+            SpellCheck.IsEnabled="True"
+            materialDesign:HintAssist.Hint=" Beschrijf hier wie u bent, uw vaardigheden en werkverleden"
+            Height="120" BorderThickness="1" BorderBrush="Black">
+            
+        </TextBox>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="8" Grid.Column="3">
+            <Button x:Name="btnTerugNaarOverzicht" Content="Terug Naar Overzicht" VerticalAlignment="Center" Width="170" Background="#3171b7" BorderBrush="#3171b7" materialDesign:ButtonAssist.CornerRadius="10" Click="btnTerugNaarOverzicht_Click" />
+            <Button x:Name="btnAanpassenGegevens" Content="Aanpassen gegevens" Margin="5"  VerticalAlignment="Center" Width="170" Background="#3171b7" BorderBrush="#3171b7" materialDesign:ButtonAssist.CornerRadius="10" Click="btnAanpassenGegevens_Click"/>
+            
+        </StackPanel>   
+    </Grid>
+</Window>

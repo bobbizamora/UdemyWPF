@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="708798d112c8411fa2d887f105c57592" Name="Diagram1" ZoomLevel="112">
+        <EntityTypeShape EntityType="UdemyModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Beoordeling" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Bijzonderheid" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Categorie" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Cursus_Bijzonderheid" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Cursus_Student" Width="1.5" PointX="8.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Lesgever" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Niveau" Width="1.5" PointX="0.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Ondertitel" Width="1.5" PointX="7.5" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Student" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Taal" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UdemyModel.Video" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <AssociationConnector Association="UdemyModel.FK_Beoordeling_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="UdemyModel.FK_Cursus_Bijzonderheid_Bijzonderheid" ManuallyRouted="false" />
+        <AssociationConnector Association="UdemyModel.FK_Categorie_Cat_Id" ManuallyRouted="false" />
+        <AssociationConnector Association="UdemyModel.FK_Cursus_Student_Student" ManuallyRouted="false" />
+        <AssociationConnector Association="UdemyModel.FK_Ondertitel_Taal" ManuallyRouted="false" />
+        <AssociationConnector Association="UdemyModel.FK_Ondertitel_Video" ManuallyRouted="false" />
+        <AssociationConnector Association="UdemyModel.FK_Video_Taal" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="UdemyModel.Cursus" Width="1.5" PointX="3" PointY="4.875" />
+        <AssociationConnector Association="UdemyModel.FK_Beoordeling_Cursus" />
+        <AssociationConnector Association="UdemyModel.FK_Cursus_Categorie" />
+        <AssociationConnector Association="UdemyModel.FK_Cursus_Bijzonderheid_Cursus" />
+        <AssociationConnector Association="UdemyModel.FK_Cursus_Lesgever" />
+        <AssociationConnector Association="UdemyModel.FK_Cursus_Niveau" />
+        <AssociationConnector Association="UdemyModel.FK_Cursus_Student_Cursus" />
+        <AssociationConnector Association="UdemyModel.FK_Cursus_Taal" />
+        <AssociationConnector Association="UdemyModel.FK_Video_Cursus" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
